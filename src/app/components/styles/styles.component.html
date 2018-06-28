@@ -1,0 +1,48 @@
+
+<div style="margin-top:50px" class="container">
+  <div class="main">
+      <div class="row">
+          <span [ngClass]="fontSize">
+            Hola mundo
+          </span>
+          <hr>
+          <div class="col-md-8">
+          <button (click)="sumFont()" class="btn btn-primary">
+            Aumentar
+          </button>
+          <button (click)="restFont()"  class="btn btn-danger">
+            Disminuir
+          </button>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div [ngClass]="{'alert-primary':alert,'alert-danger':!alert}"  class="alert" role="alert">
+            A simple primary alert—check it out!
+        </div>
+        <div style="margin-top:-60px" class="col-md-8 text-right">
+          <button (click)="alert = true" class="btn btn-primary">Info!</button>
+          <button (click)="alert = false" class="btn btn-danger">Danger!</button>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <button (click)="loader()"
+        [disabled]="loading"
+        class="btn btn-primary btn-block">
+          <i [ngClass]="{ 'fa-refresh fa-spin':loading,'fa-save':!loading }"
+          class="fa"></i>
+          {{ statusLoader }}
+        </button>
+      </div>
+      <hr>
+      <div class="row" style="margin-top:4em">
+        <article>
+           <h1 appDirective>
+             Hola estoy probando la directiva
+           </h1>
+        </article>
+      </div>
+
+  </div>
+</div>
